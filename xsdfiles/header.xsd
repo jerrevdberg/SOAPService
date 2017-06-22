@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.w3schools.com/JerrevdBerg"
+	elementFormDefault="qualified" xmlns="http://www.w3schools.com/JerrevdBerg header.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="ID" type="xs:integer">
+	</xs:element>
+
+	<xs:annotation>
+		<xs:appinfo> Beschrijving ID </xs:appinfo>
+		<xs:documentation xml:lang="nl">
+		Het soap bericht moet beginnen met deze header en de voor de header specifieke informatie bevatten.
+		De header moet een ID bevatten, anders is het bericht niet goed.
+		</xs:documentation>
+	</xs:annotation>
+
+</xs:schema>

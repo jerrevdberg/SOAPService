@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.w3schools.com/JerrevdBerg"
+	elementFormDefault="qualified" xmlns="http://www.w3schools.com/JerrevdBerg fout.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="errorMessage">
+	<xs:complexType>
+	<xs:sequence>
+	<xs:element name="requestInput" type="xs:string"/>
+	<xs:element name="errorMessage" type="xs:string"/>
+	</xs:sequence>
+	</xs:complexType>
+	
+	</xs:element>
+	<xs:annotation>
+		<xs:appinfo> Beschrijving errorMessage </xs:appinfo>
+		<xs:documentation xml:lang="nl">
+		In de foutmelding komen twee elementen. Dit is waarom de errorMessage een complexType is.
+		In de errormessage komt de input de staan en daarna de bijbehoorde error message.
+		Beide elementen zijn strings.
+		</xs:documentation>
+	</xs:annotation>
+</xs:schema>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:req="http://www.w3schools.com/JerrevdBerg"
+	xmlns:rsp="http://www.w3schools.com/JerrevdBerg" xmlns:hdr="http://www.w3schools.com/JerrevdBerg"
+	xmlns:flt="http://www.w3schools.com/JerrevdBerg" xmlns:srv="http://www.w3schools.com/JerrevdBerg/message"
+	targetNamespace="http://www.w3schools.com/JerrevdBerg/message">
+	<wsdl:types>
+		<xsd:schema>
+			<xsd:import namespace="http://www.w3schools.com/JerrevdBerg"
+				schemaLocation="XMLSchemaRequest.xsd" />
+			<xsd:import namespace="http://www.w3schools.com/JerrevdBerg"
+				schemaLocation="XMLSchemaResponse.xsd" />
+			<xsd:import namespace="http://www.w3schools.com/JerrevdBerg"
+				schemaLocation="header.xsd" />
+			<xsd:import namespace="http://www.w3schools.com/JerrevdBerg"
+				schemaLocation="fout.xsd" />
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="header">
+		<wsdl:part name="header" element="hdr:ID"/>
+	</wsdl:message>
+	<wsdl:message name="request">
+		<wsdl:part name="request" element="req:values" />
+	</wsdl:message>
+	
+	<wsdl:message name="response">
+		<wsdl:part name="response" element="rsp:averageValue" />
+	</wsdl:message>
+
+	<wsdl:message name="ApplicatieFout">
+		<wsdl:part name="ApplicatieFout" element="flt:errorMessage" />
+	</wsdl:message>
+
+	<wsdl:portType name="WS-Interface">
+		<wsdl:operation name="getAverage">
+			<wsdl:input message="srv:request" />
+			<wsdl:output message="srv:response" />
+			<wsdl:fault name="ApplicatieFout" message="srv:ApplicatieFout" />
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:binding name="WS-Binding" type="srv:WS-Interface">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="getAverage">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="srv:header" part="header" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="srv:header" part="header" use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ApplicatieFout">
+				<soap:fault name="ApplicatieFout" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<wsdl:service name="averageCalculator">
+		<wsdl:port name="WS-Port" binding="srv:WS-Binding">
+			<soap:address location="http://www.examples.com/SayHello/" />
+		</wsdl:port>
+	</wsdl:service>
+	
+</wsdl:definitions>
+
