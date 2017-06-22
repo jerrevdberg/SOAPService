@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.w3schools.com/JerrevdBerg XMLSchemaResponse.xsd" elementFormDefault="qualified" targetNamespace="http://www.w3schools.com/JerrevdBerg">
+	<xs:element name="averageValue" type="xs:float">
+	</xs:element>
+
+	<xs:annotation>
+	<xs:appinfo> Beschrijving value </xs:appinfo>
+	<xs:documentation xml:lang="nl">
+	Dit is de response van de berekening van het gemiddelde.
+	De response is een float omdat het meerdere cijfers achter de komma kan bevatten.
+	</xs:documentation>
+	</xs:annotation>
+</xs:schema>
