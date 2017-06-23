@@ -9,13 +9,13 @@
 	<wsdl:types>
 		<xsd:schema>
 			<xsd:import namespace="http://www.w3schools.com/JerrevdBerg"
-				schemaLocation="XMLSchemaRequest.xsd" />
+				schemaLocation="../xsdfiles/XMLSchemaRequest.xsd" />
 			<xsd:import namespace="http://www.w3schools.com/JerrevdBerg"
-				schemaLocation="XMLSchemaResponse.xsd" />
+				schemaLocation="../xsdfiles/XMLSchemaResponse.xsd" />
 			<xsd:import namespace="http://www.w3schools.com/JerrevdBerg"
-				schemaLocation="header.xsd" />
+				schemaLocation="../xsdfiles/header.xsd" />
 			<xsd:import namespace="http://www.w3schools.com/JerrevdBerg"
-				schemaLocation="fout.xsd" />
+				schemaLocation="../xsdfiles/fout.xsd" />
 		</xsd:schema>
 	</wsdl:types>
 	<wsdl:message name="header">
