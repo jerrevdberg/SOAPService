@@ -16,14 +16,7 @@
 		<xs:appinfo> Beschrijving values </xs:appinfo>
 		<xs:documentation xml:lang="nl">
 			Dit is de beschrijving van
-			de request. De request bevat integers.
-			De lijst van integers is
-			minimaal 2 lang en maximaal 40 groot.
-			Er is gekozen voor een global
-			type xs:float omdat er geen complexType
-			bij deze berekening benodigd
-			is.
-			Op basis van deze lijst values wordt het gemiddelde berekend.
+			de request. De request bevat twee floats zodat er straks in de logica een deling gemaakt worden.
 		</xs:documentation>
 	</xs:annotation>
 
